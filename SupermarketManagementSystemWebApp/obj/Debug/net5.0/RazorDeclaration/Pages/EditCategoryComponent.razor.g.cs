@@ -89,8 +89,8 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
-    public partial class ProductsComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/editcategory/{categoryId}")]
+    public partial class EditCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,34 +98,51 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\ProductsComponent.razor"
+#line 31 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\EditCategoryComponent.razor"
        
+    [Parameter]
+    public string CategoryId { get; set; }
 
-    private IEnumerable<Product> products;
+    private Category category;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
-        products = ViewProductsUseCase.Execute();
     }
 
-    private void OnClickAddProduct()
+    protected override void OnParametersSet()
     {
-        NavigationManager.NavigateTo("/addproduct");
+        base.OnParametersSet();
+
+        if (int.TryParse(this.CategoryId, out int iCategoryId))
+        {
+            //line below used when using databases
+            //this.category = GetCategoryByIdUseCase.Execute(iCategoryId);
+
+            //lines below used when using in-memory storage
+            var cat = GetCategoryByIdUseCase.Execute(iCategoryId);
+            this.category = new Category { CategoryId = cat.CategoryId, Name = cat.Name, Description = cat.Description };
+        }
     }
 
-    private void OnEditProduct(Product product)
+    private void OnValidSubmit()
     {
-        NavigationManager.NavigateTo($"/editproduct/{product.ProductId}");
+        EditCategoryUseCase.Execute(this.category);
+        NavigationManager.NavigateTo("/categories");
+    }
+
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/categories");
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IEditCategoryUseCase EditCategoryUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewProductsUseCase ViewProductsUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IAddCategoryUseCase AddCategoryUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
