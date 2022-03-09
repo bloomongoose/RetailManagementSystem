@@ -1,0 +1,15 @@
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\UseCases.deps.json
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\UseCases.dll
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\ref\UseCases.dll
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\UseCases.pdb
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\CoreBusiness.dll
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\bin\Debug\net5.0\CoreBusiness.pdb
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.csproj.AssemblyReference.cache
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.AssemblyInfoInputs.cache
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.AssemblyInfo.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.csproj.CoreCompileInputs.cache
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.csproj.CopyComplete
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.dll
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\ref\UseCases.dll
+C:\Users\radee\source\repos\SupermarketManagementSystem\UseCases\obj\Debug\net5.0\UseCases.pdb
