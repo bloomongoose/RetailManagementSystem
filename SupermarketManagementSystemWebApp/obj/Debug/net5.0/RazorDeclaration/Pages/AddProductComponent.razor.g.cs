@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SupermarketManagementSystemWebApp.Shared
+namespace SupermarketManagementSystemWebApp.Pages
 {
     #line hidden
     using System;
@@ -89,7 +89,8 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addproduct")]
+    public partial class AddProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,20 +98,37 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Shared\NavMenu.razor"
+#line 47 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\AddProductComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private Product product;
+    private IEnumerable<Category> categories;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override void OnInitialized()
     {
-        collapseNavMenu = !collapseNavMenu;
+        base.OnInitialized();
+
+        product = new Product();
+        categories = ViewCategoriesUseCase.Execute();
     }
+
+    private void OnValidSubmit()
+    {
+        AddProductUseCase.Execute(product);
+        NavigationManager.NavigateTo("/products");
+    }
+
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/products");
+    }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewCategoriesUseCase ViewCategoriesUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IAddProductUseCase AddProductUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -68,3 +68,7 @@ C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSys
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Pages\AddCategoryComponent.razor.g.cs
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\EditComponent.razor.g.cs
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Pages\EditComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\ProductsComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Pages\ProductsComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddProductComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Pages\AddProductComponent.razor.g.cs
