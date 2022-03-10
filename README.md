@@ -12,3 +12,7 @@ Allows you to add products with associated categories.
 Cashiers can mark down what they've sold in order to keep track of inventory quantity.
 
 ![image](https://user-images.githubusercontent.com/33027198/157769658-4e051c1a-1071-4e81-8166-65b91117327f.png)
+
+Transactions are kept track, and reports can be viewed and printed.
+
+![image](https://user-images.githubusercontent.com/33027198/157770214-061b236c-3ff1-4f43-8abb-94cc77fd08f8.png)
