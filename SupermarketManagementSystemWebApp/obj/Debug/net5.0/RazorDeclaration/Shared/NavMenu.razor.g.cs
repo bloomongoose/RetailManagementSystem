@@ -84,6 +84,13 @@ using SupermarketManagementSystemWebApp.Shared;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
+using SupermarketManagementSystemWebApp.Controls;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
 using CoreBusiness;
 
 #line default
@@ -97,7 +104,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Shared\NavMenu.razor"
+#line 33 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

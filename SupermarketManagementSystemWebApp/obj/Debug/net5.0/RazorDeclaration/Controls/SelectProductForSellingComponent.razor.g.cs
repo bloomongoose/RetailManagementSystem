@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SupermarketManagementSystemWebApp.Pages
+namespace SupermarketManagementSystemWebApp.Controls
 {
     #line hidden
     using System;
@@ -84,13 +84,19 @@ using SupermarketManagementSystemWebApp.Shared;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
+using SupermarketManagementSystemWebApp.Controls;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
 using CoreBusiness;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
-    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class SelectProductForSellingComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,18 +104,50 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\Counter.razor"
+#line 41 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Controls\SelectProductForSellingComponent.razor"
        
-    private int currentCount = 0;
 
-    private void IncrementCount()
+    private IEnumerable<Product> productsInCategory;
+    private int selectedProductId;
+
+    [Parameter]
+    public EventCallback<Product> OnProductSelected { get; set; }
+
+    private int selectedCategoryId;
+    private int SelectedCategoryId
     {
-        currentCount++;
+        get
+        {
+            return selectedCategoryId;
+        }
+        set
+        {
+            selectedCategoryId = value;
+            productsInCategory = ViewProductsByCategoryId.Execute(value);
+            StateHasChanged();
+        }
+    }
+
+    private IEnumerable<Category> categories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        categories = ViewCategoriesUseCase.Execute();
+
+    }
+
+    private void OnSelectProduct(Product product)
+    {
+        selectedProductId = product.ProductId;
+        OnProductSelected.InvokeAsync(product);
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewProductsByCategoryId ViewProductsByCategoryId { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewCategoriesUseCase ViewCategoriesUseCase { get; set; }
     }
 }
 #pragma warning restore 1591

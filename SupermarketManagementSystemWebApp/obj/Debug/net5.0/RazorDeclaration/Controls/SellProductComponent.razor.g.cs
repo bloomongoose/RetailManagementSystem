@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SupermarketManagementSystemWebApp.Pages
+namespace SupermarketManagementSystemWebApp.Controls
 {
     #line hidden
     using System;
@@ -84,20 +84,19 @@ using SupermarketManagementSystemWebApp.Shared;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
-using CoreBusiness;
+using SupermarketManagementSystemWebApp.Controls;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\FetchData.razor"
-using SupermarketManagementSystemWebApp.Data;
+#line 13 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
+using CoreBusiness;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class SellProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,19 +104,62 @@ using SupermarketManagementSystemWebApp.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\FetchData.razor"
+#line 36 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Controls\SellProductComponent.razor"
        
-    private WeatherForecast[] forecasts;
+    private Product productToSell;
+    private string errorMessage;
 
-    protected override async Task OnInitializedAsync()
+    [Parameter]
+    public Product SelectedProduct { get; set; }
+
+    [Parameter]
+    public EventCallback<Product> OnProductSold { get; set; }
+
+    protected override void OnParametersSet()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        base.OnParametersSet();
+
+        if (SelectedProduct != null)
+        {
+            productToSell = new Product
+            {
+                ProductId = SelectedProduct.ProductId,
+                Name = SelectedProduct.Name,
+                CategoryId = SelectedProduct.CategoryId,
+                Price = SelectedProduct.Price,
+                Quantity = 0
+
+            };
+        }
+
     }
+
+    private void SellProduct()
+    {
+        var product = GetProductByIdUseCase.Execute(productToSell.ProductId);
+        if (productToSell.Quantity <= 0)
+        {
+            errorMessage = "The quantity has to be greater than zero.";
+        }
+        else if (product.Quantity >= productToSell.Quantity)
+        {
+            OnProductSold.InvokeAsync(productToSell);
+            errorMessage = string.Empty;
+            SellProoductUseCase.Execute(productToSell.ProductId, productToSell.Quantity);
+
+        }
+        else
+        {
+            errorMessage = $"{product.Name} only has {product.Quantity} left. It is not enough.";
+        }
+    }
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.ISellProoductUseCase SellProoductUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetProductByIdUseCase GetProductByIdUseCase { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -81,6 +81,13 @@ using SupermarketManagementSystemWebApp.Shared;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
+using SupermarketManagementSystemWebApp.Controls;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\_Imports.razor"
 using CoreBusiness;
 
 #line default
