@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SupermarketManagementSystemWebApp.Pages
+namespace SupermarketManagementSystemWebApp.Controls
 {
     #line hidden
     using System;
@@ -96,8 +96,7 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/cashier_console")]
-    public partial class CashierConsoleComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TodayTransactionsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,32 +104,21 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\CashierConsoleComponent.razor"
+#line 32 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Controls\TodayTransactionsComponent.razor"
        
-    private TodayTransactionsComponent transactionComponent;
+    private IEnumerable<Transaction> transactions;
 
-    private Product selectedProduct;
-    private string cashierName;
-
-    protected override void OnInitialized()
+    public void LoadTransactions(string cashierName)
     {
-        base.OnInitialized();
-    }
-
-    private void SelectProduct(Product product)
-    {
-        selectedProduct = product;
-    }
-
-    private void SellProduct(Product product)
-    {
-        transactionComponent.LoadTransactions(cashierName);
+        transactions = GetTodayTransactionsUseCase.Execute(cashierName);
+        StateHasChanged();
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetTodayTransactionsUseCase GetTodayTransactionsUseCase { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -76,3 +76,5 @@ C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSys
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Pages\CashierConsoleComponent.razor.g.cs
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\RazorDeclaration\Controls\SellProductComponent.razor.g.cs
 C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Controls\SellProductComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\RazorDeclaration\Controls\TodayTransactionsComponent.razor.g.cs
+C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\obj\Debug\net5.0\Razor\Controls\TodayTransactionsComponent.razor.g.cs
