@@ -105,7 +105,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\CashierConsoleComponent.razor"
+#line 27 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Pages\CashierConsoleComponent.razor"
        
     private TodayTransactionsComponent transactionComponent;
 
