@@ -4,3 +4,7 @@ A web application built primarily with C# and Razor that functions as a manageme
 Soon to include a console for cashier, CRUD-ing products, and keeping track of inventories and transactions via an SQL database.
 
 ![image](https://user-images.githubusercontent.com/33027198/157768626-8d10b6ff-b88c-49a8-b916-309cdf569ed9.png)
+
+Allows you to add products with associated categories
+
+![image](https://user-images.githubusercontent.com/33027198/157769149-a33ec8b5-3db2-4f21-8438-05d06bbe249d.png)
