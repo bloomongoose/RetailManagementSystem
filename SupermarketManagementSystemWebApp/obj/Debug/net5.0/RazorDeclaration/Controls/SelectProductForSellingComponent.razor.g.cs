@@ -124,6 +124,7 @@ using CoreBusiness;
         {
             selectedCategoryId = value;
             productsInCategory = ViewProductsByCategoryId.Execute(value);
+            OnSelectProduct(null);
             StateHasChanged();
         }
     }
@@ -139,8 +140,10 @@ using CoreBusiness;
 
     private void OnSelectProduct(Product product)
     {
-        selectedProductId = product.ProductId;
+        
         OnProductSelected.InvokeAsync(product);
+        if (product != null) selectedProductId = product.ProductId;
+
     }
 
 #line default

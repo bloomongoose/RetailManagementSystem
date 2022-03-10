@@ -131,6 +131,10 @@ using CoreBusiness;
 
             };
         }
+        else
+        {
+            productToSell = null;
+        }
 
     }
 

@@ -111,7 +111,7 @@ using CoreBusiness;
 
     private void SelectProduct(Product product)
     {
-
+        selectedProduct = product;
     }
 
     private void SellProduct(Product product)
