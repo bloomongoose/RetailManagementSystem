@@ -104,7 +104,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Controls\TodayTransactionsComponent.razor"
+#line 35 "C:\Users\radee\source\repos\SupermarketManagementSystem\SupermarketManagementSystemWebApp\Controls\TodayTransactionsComponent.razor"
        
     private IEnumerable<Transaction> transactions;
 

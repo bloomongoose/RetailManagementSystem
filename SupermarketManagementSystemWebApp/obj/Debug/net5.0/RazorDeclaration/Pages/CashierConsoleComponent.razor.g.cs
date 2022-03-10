@@ -117,7 +117,17 @@ using CoreBusiness;
         base.OnInitialized();
     }
 
-    private void SelectProduct(Product product)
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (firstRender)
+        {
+            transactionComponent.LoadTransactions(cashierName);
+        }
+    }
+
+        private void SelectProduct(Product product)
     {
         selectedProduct = product;
     }
